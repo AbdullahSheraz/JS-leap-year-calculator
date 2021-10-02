@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Leap Year Calculator</h2>
+    <div class="app-form-group">
+        <input type="number" class="app-form-control" placeholder="enter year here..." id="wd">
+    </div>
+    <div>
+        <input type="button" name="" value="Search" class="app-form-button" onclick="calcy()">
+    </div>
+    <script>
+        const calcy = () => {
+            let wd = document.getElementById('wd').value;
+            let answer =""; 
+
+            
+
+            if (wd % 4 === 0) {
+                if (wd % 100 === 0) {
+                    if (wd % 400 === 0) {
+                        answer="The year " + wd + " is leap year";
+                    }
+                    else {
+                        answer="The year " + wd + " is not a leap year";
+                    }
+                }
+                else {
+                    answer="The year " + wd + " is a leap year";
+                }
+            }
+            else {
+                answer="The year " + wd + " is not a leap year";
+            }
+
+            document.getElementById('showData').innerHTML=`${answer}`
+        }
+    </script>
+    <div>
+        <p id="showData" style="font-size: 25px;"></p>    
+    </div>
+</body>
+
+</html>
